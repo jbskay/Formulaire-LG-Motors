@@ -1,0 +1,130 @@
+:root{
+  --bg:#f5f7fb;
+  --card:#ffffff;
+  --accent:#1f7aef;
+  --muted:#6b7280;
+  --danger:#b21;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  font-size:16px;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  padding:24px;
+  background:var(--bg);
+  color:#111827;
+  display:flex;
+  flex-direction: column; /* ajoute ceci pour empiler logo et formulaire */
+  align-items:center;     /* centre horizontalement le container */
+  min-height:100vh;
+}
+
+.logo-container {
+  width: 100%;
+  max-width: 920px;        /* même max-width que le formulaire */
+  background: var(--card); /* fond blanc */
+  border-radius: 10px;     /* coins arrondis */
+  padding: 20px;           /* espace intérieur */
+  box-shadow: 0 8px 24px rgba(15,23,42,0.06); /* ombre légère */
+  margin-bottom: 20px;     /* espace entre logo et formulaire */
+  display: flex;
+  justify-content: flex-start; /* logo à gauche */
+  align-items: center;          /* centré verticalement si besoin */
+}
+
+.page-header .logo {
+  display: block;
+  height: 120px;   /* taille du logo */
+  width: auto;    /* conserver les proportions */
+}
+
+
+.container{
+  width:100%;
+  max-width:920px;
+  background:var(--card);
+  border-radius:10px;
+  padding:20px;
+  box-shadow:0 8px 24px rgba(15,23,42,0.06);
+}
+
+h1{margin:0 0 12px 0;font-size:1.25rem}
+fieldset{
+  border:1px solid #e6e9ef;
+  padding:12px 14px;
+  margin:14px 0;
+  border-radius:8px;
+}
+legend{font-weight:600;padding:0 6px}
+label{display:block;margin-top:10px;font-size:0.95rem}
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+select,
+textarea,
+input[type="file"]{
+  width:100%;
+  padding:8px 10px;
+  margin-top:6px;
+  border:1px solid #d6dae3;
+  border-radius:6px;
+  font-size:0.95rem;
+}
+
+.img-preview{
+  display:block;
+  margin-top:8px;
+  max-width:120px;
+  max-height:120px;
+  object-fit:cover;
+  border-radius:6px;
+  border:1px solid #e6e9ef;
+}
+
+.checkbox-row{display:flex;gap:10px;align-items:center;margin-top:8px}
+.checkbox-row label{margin:0;font-weight:500}
+
+.signature-block{margin-top:10px;margin-bottom:8px}
+.signature{
+  width:100%;
+  height:160px;
+  border:1px dashed #cbd5e1;
+  border-radius:6px;
+  touch-action: none; /* important for touch drawing */
+  background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(250,250,250,0.9));
+}
+
+.sig-actions{display:flex;gap:8px;margin-top:8px}
+.sig-actions button{padding:6px 10px;border-radius:6px;border:1px solid #d6dae3;background:#fff;cursor:pointer}
+
+.actions{display:flex;gap:10px;margin-top:12px}
+button.primary{
+  background:var(--accent);
+  color:white;
+  border:none;
+  padding:10px 14px;
+  border-radius:8px;
+  font-weight:600;
+  cursor:pointer;
+}
+button.secondary{
+  background:#f1f5f9;
+  color:#111827;
+  border:none;
+  padding:10px 14px;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+.small{font-size:0.85rem;color:var(--muted)}
+.status{margin-top:12px;font-weight:600;color:var(--muted)}
+.info{margin-bottom:8px}
+
+.final-step{margin-top:12px;padding:10px;border-radius:8px;background:#f8fafc;border:1px solid #eef2ff}
+
+@media(min-width:760px){
+  .two-cols{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .signature{height:140px}
+}
